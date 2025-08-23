@@ -2,70 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/HugoPrueba/en/categories/</loc>
+    <loc>http://localhost:1313/uno/en/</loc>
+    <lastmod>2025-08-23T19:49:31-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:1313/HugoPrueba/categories/"
+                href="http://localhost:1313/uno/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/HugoPrueba/fr/categories/"
+                href="http://localhost:1313/uno/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://localhost:1313/HugoPrueba/pt/categories/"
+                href="http://localhost:1313/uno/pt/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/HugoPrueba/en/categories/"
+                href="http://localhost:1313/uno/en/"
                 />
   </url><url>
-    <loc>http://localhost:1313/HugoPrueba/en/</loc>
+    <loc>http://localhost:1313/uno/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:1313/HugoPrueba/"
+                href="http://localhost:1313/uno/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/HugoPrueba/fr/"
+                href="http://localhost:1313/uno/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://localhost:1313/HugoPrueba/pt/"
+                href="http://localhost:1313/uno/pt/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/HugoPrueba/en/"
+                href="http://localhost:1313/uno/en/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/HugoPrueba/en/tags/</loc>
+    <loc>http://localhost:1313/uno/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="http://localhost:1313/HugoPrueba/tags/"
+                href="http://localhost:1313/uno/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/HugoPrueba/fr/tags/"
+                href="http://localhost:1313/uno/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="http://localhost:1313/HugoPrueba/pt/tags/"
+                href="http://localhost:1313/uno/pt/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/HugoPrueba/en/tags/"
+                href="http://localhost:1313/uno/en/tags/"
                 />
   </url>
 </urlset>
