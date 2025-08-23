@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>http://localhost:1313/uno/es/sitemap.xml</loc>
+    <loc>http://localhost:1313/HugoPrueba/es/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/uno/en/sitemap.xml</loc>
+    <loc>http://localhost:1313/HugoPrueba/en/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/uno/fr/sitemap.xml</loc>
+    <loc>http://localhost:1313/HugoPrueba/fr/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/uno/pt/sitemap.xml</loc>
+    <loc>http://localhost:1313/HugoPrueba/pt/sitemap.xml</loc>
     
   </sitemap>
   

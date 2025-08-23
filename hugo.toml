@@ -4,7 +4,7 @@ title = "Sitio de Prueba con Hugo"
 theme = "PaperMod"
 defaultContentLanguage = "es"
 enableRobotsTXT = true
-paginate = 10
+pagination.pagerSize = 10
 
 [languages]
   [languages.es]
