@@ -12,32 +12,39 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
+      # Paso 1: Descarga el código y el tema
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: true
+          submodules: true  # Imprescindible para cargar el tema PaperMod
           fetch-depth: 0
 
+      # Paso 2: Instala la versión correcta de Hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
 
+      # Paso 3: Instala el entorno Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      # Paso 4: Instala las dependencias de CSS en el directorio correcto
       - name: Install Node.js dependencies
         run: npm install
+        working-directory: themes/PaperMod # La corrección clave
 
+      # Paso 5: Construye el sitio. Ahora Hugo encontrará las herramientas de CSS
       - name: Build Hugo site
         run: hugo --minify
 
+      # Paso 6: Despliega el resultado final
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./public 
