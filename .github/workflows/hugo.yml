@@ -16,8 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: true  # Imprescindible para cargar el tema PaperMod
+          submodules: 'recursive' # Cambiado a 'recursive' por seguridad
           fetch-depth: 0
+
+      # =================================================================
+      # PASO DE DIAGNÓSTICO AÑADIDO
+      # Esto nos mostrará todos los archivos y carpetas descargados.
+      - name: List files for debugging
+        run: ls -R
+      # =================================================================
 
       # Paso 2: Instala la versión correcta de Hugo
       - name: Setup Hugo
@@ -35,9 +42,9 @@ jobs:
       # Paso 4: Instala las dependencias de CSS en el directorio correcto
       - name: Install Node.js dependencies
         run: npm install
-        working-directory: themes/PaperMod # La corrección clave
+        working-directory: ./themes/PaperMod
 
-      # Paso 5: Construye el sitio. Ahora Hugo encontrará las herramientas de CSS
+      # Paso 5: Construye el sitio
       - name: Build Hugo site
         run: hugo --minify
 
@@ -47,4 +54,4 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public 
+          publish_dir: ./public
