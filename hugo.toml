@@ -1,0 +1,25 @@
+baseURL = "https://javiercaram.github.io/HugoPrueba/"
+languageCode = "es"
+title = "Sitio de Prueba con Hugo"
+theme = "PaperMod"
+defaultContentLanguage = "es"
+enableRobotsTXT = true
+paginate = 10
+
+[languages]
+  [languages.es]
+    weight = 1
+    languageName = "Español"
+    contentDir = "content/es"
+  [languages.en]
+    weight = 2
+    languageName = "English"
+    contentDir = "content/en"
+  [languages.fr]
+    weight = 3
+    languageName = "Français"
+    contentDir = "content/fr"
+  [languages.pt]
+    weight = 4
+    languageName = "Português"
+    contentDir = "content/pt"
