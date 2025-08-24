@@ -1,45 +1,62 @@
-name: GitHub Pages
+# Nombre del workflow
+name: Deploy Hugo site to Pages
 
 on:
   push:
     branches:
       - main
 
+# Permisos especiales que este método necesita
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Permite solo una ejecución concurrente
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  deploy:
+  # Trabajo de construcción
+  build:
     runs-on: ubuntu-latest
-
-    # ESTA ES LA SECCIÓN AÑADIDA QUE SOLUCIONA EL PROBLEMA
-    permissions:
-      contents: write # Permite que la acción haga 'git push' a la rama gh-pages
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
       - name: Install Dependencies
         run: npm install
         working-directory: themes/ananke
-
-      - name: Build
+      - name: Build with Hugo
         run: hugo --minify
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      # Paso clave: Sube el sitio compilado como un "artefacto"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+  # Trabajo de despliegue
+  deploy:
+    # El despliegue depende de que la construcción sea exitosa
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # Paso clave: Despliega el artefacto que se subió en el paso anterior
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1 
