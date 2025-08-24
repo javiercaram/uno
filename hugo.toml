@@ -1,25 +1,31 @@
 baseURL = "https://javiercaram.github.io/uno/"
 languageCode = "es"
-title = "Sitio de Prueba con Hugo"
-theme = "ananke"
+title = "Mi Nuevo Sitio"
+theme = "PaperMod"
 defaultContentLanguage = "es"
 enableRobotsTXT = true
-pagination.pagerSize = 10
+
+[params]
+    defaultTheme = "auto" # Puede ser "light", "dark" o "auto"
+    ShowShareButtons = true
+    ShowReadingTime = true
+    ShowPostNavLinks = true
 
 [languages]
   [languages.es]
     weight = 1
     languageName = "Español"
     contentDir = "content/es"
-  [languages.en]
-    weight = 2
-    languageName = "English"
-    contentDir = "content/en"
-  [languages.fr]
-    weight = 3
-    languageName = "Français"
-    contentDir = "content/fr"
-  [languages.pt]
-    weight = 4
-    languageName = "Português"
-    contentDir = "content/pt"
+    [languages.es.menu]
+        [[languages.es.menu.main]]
+            identifier = "archives"
+            name = "Archivos"
+            url = "/archives/"
+            weight = 10
+        [[languages.es.menu.main]]
+            identifier = "search"
+            name = "Buscar"
+            url = "/search/"
+            weight = 20
+
+   
