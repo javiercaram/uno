@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Página de Inicio on Mi Nuevo Sitio</title>
-    <link>http://localhost:1313/uno/</link>
-    <description>Recent content in Página de Inicio on Mi Nuevo Sitio</description>
+    <title>Noticias on Mi Nuevo Sitio</title>
+    <link>http://localhost:1313/uno/tags/noticias/</link>
+    <description>Recent content in Noticias on Mi Nuevo Sitio</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sun, 24 Aug 2025 01:49:38 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/uno/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/uno/tags/noticias/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artículo de Ejemplo 1</title>
       <link>http://localhost:1313/uno/posts/post-ejemplo-1/</link>
@@ -28,20 +28,6 @@
       <pubDate>Sun, 24 Aug 2025 01:49:38 +0000</pubDate>
       <guid>http://localhost:1313/uno/posts/post-ejemplo-3/</guid>
       <description>Introducción Link to heading Este es el cuerpo del Artículo de Ejemplo 3 en es.&#xA;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
-    </item>
-    <item>
-      <title>Sobre Mí</title>
-      <link>http://localhost:1313/uno/about/</link>
-      <pubDate>Sun, 24 Aug 2025 01:49:38 +0000</pubDate>
-      <guid>http://localhost:1313/uno/about/</guid>
-      <description>Esta es la página sobre mí.&#xA;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/uno/ejemplo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/uno/ejemplo/</guid>
-      <description> algo Link to heading </description>
     </item>
   </channel>
 </rss>

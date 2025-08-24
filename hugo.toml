@@ -1,34 +1,43 @@
 baseURL = "https://javiercaram.github.io/uno/"
 languageCode = "es"
 title = "Mi Nuevo Sitio"
-theme = "coder" # El único cambio de tema que queríamos
+theme = "coder"
 defaultContentLanguage = "es"
 enableRobotsTXT = true
+paginate = 5 # He añadido esto para que la lista de posts se pagine si tienes muchos
 
-# --- SECCIÓN MODIFICADA ---
-# Estos son los parámetros que el tema "coder" entiende.
-# Los de PaperMod (`ShowShareButtons`, etc.) han sido eliminados porque causarían errores.
 [params]
-    author = "Javier C"
-    info = "Desarrollador"
-    description = "El sitio de Javier C."
-    colorscheme = "auto" # dark, light, o auto
-    avatarurl = "/images/avatar.jpg" # Puedes crear esta imagen después
+    author = "Javier Caram"
+    info = "Desarrollador y Creador"
+    description = "El sitio de Javier Caram."
+    colorscheme = "auto"
 
-# --- SECCIÓN MODIFICADA ---
-# La estructura del menú es diferente en Coder. Esto creará los enlaces correctamente.
 [languages]
   [languages.es]
     weight = 1
     languageName = "Español"
     contentDir = "content/es"
-    # Menú adaptado para Coder
     [languages.es.menu]
       [[languages.es.menu.main]]
         name = "Blog"
-        url = "posts/"
+        url = "/posts/"  # <-- CORREGIDO
         weight = 1
       [[languages.es.menu.main]]
         name = "Sobre mí"
-        url = "about/"
-        weight = 2 
+        url = "/about/"  # <-- CORREGIDO
+        weight = 2
+  
+  [languages.en]
+    weight = 2
+    languageName = "English"
+    contentDir = "content/en"
+  
+  [languages.fr]
+    weight = 3
+    languageName = "Français"
+    contentDir = "content/fr"
+  
+  [languages.pt]
+    weight = 4
+    languageName = "Português"
+    contentDir = "content/pt"
