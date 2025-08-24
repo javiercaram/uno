@@ -1,62 +1,55 @@
-# Nombre del workflow
 name: Deploy Hugo site to Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # O la rama que uses como principal
 
-# Permisos especiales que este método necesita
+  workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permite solo una ejecución concurrente
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  # Trabajo de construcción
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.125.4/hugo_extended_0.125.4_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: recursive
           fetch-depth: 0
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Install Dependencies
-        run: npm install
-        working-directory: themes/ananke
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Build with Hugo
-        run: hugo --minify
-      # Paso clave: Sube el sitio compilado como un "artefacto"
+        env:
+          HUGO_ENV: production
+        run: |
+          hugo --gc --minify \
+               --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-  # Trabajo de despliegue
   deploy:
-    # El despliegue depende de que la construcción sea exitosa
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
     steps:
-      # Paso clave: Despliega el artefacto que se subió en el paso anterior
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1 
+        uses: actions/deploy-pages@v4
