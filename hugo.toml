@@ -1,31 +1,34 @@
 baseURL = "https://javiercaram.github.io/uno/"
 languageCode = "es"
 title = "Mi Nuevo Sitio"
-theme = "PaperMod"
+theme = "coder" # El único cambio de tema que queríamos
 defaultContentLanguage = "es"
 enableRobotsTXT = true
 
+# --- SECCIÓN MODIFICADA ---
+# Estos son los parámetros que el tema "coder" entiende.
+# Los de PaperMod (`ShowShareButtons`, etc.) han sido eliminados porque causarían errores.
 [params]
-    defaultTheme = "auto" # Puede ser "light", "dark" o "auto"
-    ShowShareButtons = true
-    ShowReadingTime = true
-    ShowPostNavLinks = true
+    author = "Javier C"
+    info = "Desarrollador"
+    description = "El sitio de Javier C."
+    colorscheme = "auto" # dark, light, o auto
+    avatarurl = "/images/avatar.jpg" # Puedes crear esta imagen después
 
+# --- SECCIÓN MODIFICADA ---
+# La estructura del menú es diferente en Coder. Esto creará los enlaces correctamente.
 [languages]
   [languages.es]
     weight = 1
     languageName = "Español"
     contentDir = "content/es"
+    # Menú adaptado para Coder
     [languages.es.menu]
-        [[languages.es.menu.main]]
-            identifier = "archives"
-            name = "Archivos"
-            url = "/archives/"
-            weight = 10
-        [[languages.es.menu.main]]
-            identifier = "search"
-            name = "Buscar"
-            url = "/search/"
-            weight = 20
-
-   
+      [[languages.es.menu.main]]
+        name = "Blog"
+        url = "posts/"
+        weight = 1
+      [[languages.es.menu.main]]
+        name = "Sobre mí"
+        url = "about/"
+        weight = 2 
