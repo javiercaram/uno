@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Página de Inicio on Sitio de Prueba con Hugo</title>
-    <link>http://localhost:1313/uno/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content in Página de Inicio on Sitio de Prueba con Hugo</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/uno/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/uno/ejemplo/</link>
+      <link>//localhost:1313/ejemplo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/uno/ejemplo/</guid>
-      <description>&lt;h1 id=&#34;algo&#34;&gt;algo&lt;/h1&gt;</description>
+      <guid>//localhost:1313/ejemplo/</guid>
+      <description>algo </description>
     </item>
   </channel>
 </rss>

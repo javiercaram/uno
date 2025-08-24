@@ -1,4 +1,4 @@
-baseURL = "https://javiercaram.github.io/uno/"
+baseURL = "/"
 languageCode = "es"
 title = "Sitio de Prueba con Hugo"
 theme = "ananke"

@@ -1,40 +1,49 @@
- name: GitHub Pages
+# 1. Nombre del workflow (la pieza que faltaba)
+name: GitHub Pages
 
+# 2. Se activa con un push a la rama main
 on:
   push:
     branches:
       - main
 
+# 3. Define los trabajos a realizar
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Descarga su código y el tema (el submódulo)
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: true  # Esto AHORA SÍ va a funcionar
+          submodules: true
           fetch-depth: 0
 
+      # Instala la versión de Hugo Extended más reciente
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
 
+      # Instala Node.js para las herramientas del tema
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      # Instala las dependencias del tema (PostCSS, etc.)
       - name: Install Dependencies
         run: npm install
-        working-directory: themes/ananke # Apuntando al directorio correcto de Ananke
+        working-directory: themes/ananke
 
+      # Construye el sitio
       - name: Build
         run: hugo --minify
 
+      # Despliega el resultado en la rama gh-pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./public 
