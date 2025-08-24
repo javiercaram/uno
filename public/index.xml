@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Página de Inicio on Sitio de Prueba con Hugo</title>
-    <link>//:1313/</link>
-    <description>Recent content in Página de Inicio on Sitio de Prueba con Hugo</description>
-    <generator>Hugo</generator>
+    <title>Página de Inicio on Mi Nuevo Sitio</title>
+    <link>http://localhost:1313/uno/</link>
+    <description>Recent content in Página de Inicio on Mi Nuevo Sitio</description>
+    <generator>Hugo -- 0.129.0</generator>
     <language>es</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/uno/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>//:1313/ejemplo/</link>
+      <link>http://localhost:1313/uno/ejemplo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//:1313/ejemplo/</guid>
+      <guid>http://localhost:1313/uno/ejemplo/</guid>
       <description>algo </description>
     </item>
   </channel>
